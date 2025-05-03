@@ -27,7 +27,7 @@ public class AvailabilityService {
 
     public MedicineStock updateStock(Long Id, MedicineStock medicineStock) {
         MedicineStock stock = stockRepository.findById(Id)
-            .orElseThrow(() -> new RuntimeException("Meedicine doesnt exist in stock"));
+            .orElseThrow(() -> new RuntimeException("Medicine doesnt exist in stock"));
         stock.setMedicine(medicineStock.getMedicine());
         stock.setPharmacy(medicineStock.getPharmacy());
         stock.setPrice(medicineStock.getPrice());    
