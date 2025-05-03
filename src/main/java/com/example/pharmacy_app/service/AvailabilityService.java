@@ -25,10 +25,13 @@ public class AvailabilityService {
         return stockRepository.findByMedicineNameContainingIgnoreCaseAndQuantityGreaterThan(medicineName, 0);
     }
 
-    public MedicineStock updateStock(Long pharmacyId, Long medicineId, Integer quantity) {
-        MedicineStock stock = stockRepository.findByPharmacyIdAndMedicineId(pharmacyId, medicineId)
-                .orElse(new MedicineStock());
-        stock.setQuantity(quantity);
+    public MedicineStock updateStock(Long Id, MedicineStock medicineStock) {
+        MedicineStock stock = stockRepository.findById(Id)
+            .orElseThrow(() -> new RuntimeException("Meedicine doesnt exist in stock"));
+        stock.setMedicine(medicineStock.getMedicine());
+        stock.setPharmacy(medicineStock.getPharmacy());
+        stock.setPrice(medicineStock.getPrice());    
+        stock.setQuantity(medicineStock.getQuantity());
         return stockRepository.save(stock);
     }
 }
