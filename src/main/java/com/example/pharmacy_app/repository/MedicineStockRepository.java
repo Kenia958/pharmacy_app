@@ -13,4 +13,7 @@ public interface MedicineStockRepository extends JpaRepository<MedicineStock, Lo
     List<MedicineStock> findByMedicineId(Long medicineId);
     List<MedicineStock> findByPharmacyId(Long pharmacyId);
     List<MedicineStock> findByMedicineNameContainingIgnoreCaseAndQuantityGreaterThan(String medicineName, Integer quantity);
+    List<MedicineStock> findByMedicineIdAndQuantityGreaterThan(Long medicineId, int i);
+    Object findByPharmacyIdAndMedicineId(Long pharmacyId, Long medicineId);
+
 }
