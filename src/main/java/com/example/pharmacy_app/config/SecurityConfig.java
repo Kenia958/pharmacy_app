@@ -1,6 +1,5 @@
 package com.example.pharmacy_app.config;
 
-package com.medicinechecker.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +24,7 @@ public class SecurityConfig {
             )
             .httpBasic();
         
-        return http.build();
+        return http.build();P
     }
 
     @Bean
