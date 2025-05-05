@@ -33,9 +33,8 @@ public class AvailabilityController {
 
     @PostMapping("/update-stock")
     public MedicineStock updateStock(
-            @RequestParam Long pharmacyId,
-            @RequestParam Long medicineId,
-            @RequestParam Integer quantity) {
-        return availabilityService.updateStock(Id, medicineId, quantity);
+            @RequestParam Long Id,
+            @RequestParam MedicineStock medicineStock) {
+        return availabilityService.updateStock(Id, medicineStock);
     }
 }
