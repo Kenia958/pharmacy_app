@@ -36,6 +36,6 @@ public class AvailabilityController {
             @RequestParam Long pharmacyId,
             @RequestParam Long medicineId,
             @RequestParam Integer quantity) {
-        return availabilityService.updateStock(pharmacyId, medicineId, quantity);
+        return availabilityService.updateStock(Id, medicineId, quantity);
     }
 }
