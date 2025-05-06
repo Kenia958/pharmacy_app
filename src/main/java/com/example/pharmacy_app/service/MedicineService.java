@@ -23,4 +23,5 @@ public class MedicineService {
     public Medicine addMedicine(Medicine medicine) {
         return medicineRepository.save(medicine);
     }
+    
 }

@@ -1,10 +1,10 @@
 package com.example.pharmacy_app.controller;
 
 
-import com.medicinechecker.dto.LoginRequest;
-import com.medicinechecker.dto.RegisterRequest;
-import com.medicinechecker.model.Pharmacy;
-import com.medicinechecker.service.AuthService;
+import com.example.pharmacy_app.dto.LoginRequest;
+import com.example.pharmacy_app.dto.RegisterRequest;
+import com.example.pharmacy_app.model.Pharmacy;
+import com.example.pharmacy_app.service.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
