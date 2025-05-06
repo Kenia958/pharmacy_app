@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
+// @RequiredArgsConstructor
 public class AuthService {
     private final PharmacyRepository pharmacyRepository;
     private final PasswordEncoder passwordEncoder;
