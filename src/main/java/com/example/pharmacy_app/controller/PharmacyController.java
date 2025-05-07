@@ -24,4 +24,5 @@ public class PharmacyController {
     public Pharmacy updatePharmacy(@PathVariable Long id, @RequestBody Pharmacy pharmacy) {
         return pharmacyService.updatePharmacy(id, pharmacy);
     }
+
 }
