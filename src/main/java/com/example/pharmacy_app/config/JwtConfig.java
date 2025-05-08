@@ -1,15 +1,29 @@
 package com.example.pharmacy_app.config;
 
-
-import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import io.jsonwebtoken.security.Keys;
+import lombok.Data;
 
-@Data
+import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
+
 @Configuration
-@ConfigurationProperties(prefix = "jwt")
+@Data
 public class JwtConfig {
+    @Value("${jwt.secret:default-secret-key-must-be-replaced-in-production}")
     private String secret;
-    private long expirationMs;
-    private String issuer;
+    
+    @Value("${jwt.expiration:86400}")
+    private Long expiration;
+
+    @Bean
+    public SecretKey secretKey() {
+        return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public Long getExpiration() {
+        return expiration;
+    }
 }
