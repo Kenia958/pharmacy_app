@@ -31,7 +31,7 @@ public class AvailabilityController {
         return availabilityService.searchNearbyAvailability(medicineName, lat, lon, radius);
     }
 
-    @PostMapping("/update-stock")
+    @PutMapping("/update-stock/{id}")
     public MedicineStock updateStock(
             @RequestParam Long Id,
             @RequestParam MedicineStock medicineStock) {
